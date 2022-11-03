@@ -1,0 +1,1695 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+// col set
+$col-1:#122023;
+$col-2:#FFF7E1;
+$col-3:#F7F9FA;
+$col-4:#19CE60;
+$col-5:#DAE1E6;
+// mixin set
+@mixin flex-set($direction, $content, $items) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $items;
+}
+@mixin width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
+// root 시작
+#root{
+  @include flex-set(column,flex-start,center);
+  @include width-height(100vw,100vh);
+// 모바일 시작
+  @media(max-width: 428px){
+    &{
+      @include flex-set(row, flex-start, center)
+      
+    }
+    & > nav{@include flex-set(column,flex-start,center);
+    @include width-height(40px, 100vh);
+    background-color: $col-4;
+    }
+    & > nav > div{
+      @include width-height(24%, 1%);
+      background-color: $col-3;
+      border-radius: 50px;
+      margin-top: 45px;
+      position: relative;
+      top: 100px;
+    }
+  // main 시작
+    & > main{
+      @include flex-set(column, flex-start, center);
+      width: calc(100% - 40px);
+      height: 100vh;
+      background-color: $col-3;
+      
+    }
+    & > main > header{
+      @include width-height(80%,20%);
+      @include flex-set(column,center,center);
+      
+    }
+    & > main > header > div:nth-child(1){
+      @include width-height(25%,20%);
+    }
+    & > main > header > div:nth-child(2){
+      @include width-height(100%,50%);
+      @include flex-set(row,space-around,center);
+      position: relative;
+      left: 10px;
+      top: 35px;
+    }
+    & > main > header > div:nth-child(2) div:nth-child(1){
+      @include width-height(90%,40%);
+      color: $col-4;
+      text-align: center;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 38px;
+      line-height: 39px;
+    }
+    & > main > header > div:nth-child(2) div:nth-child(2){
+      @include width-height(15%,15%);
+      background-color: $col-4;
+      color: $col-3;
+      text-align: center;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 12px;
+      border-radius: 5px;
+
+    }
+    & > main > section{
+      @include flex-set(column, flex-start, center);
+      @include width-height(80vw, 80%);
+    }
+    & > main > section > div{
+      @include flex-set(column, flex-start, center);
+      @include width-height(80vw, 50%);
+    }
+    & > main > section > div >div:nth-child(1){
+      @include width-height(80vw, 25%);
+      @include flex-set(row, center, center);
+    }
+    & > main > section > div >div:nth-child(1) > div:nth-child(1){
+      @include width-height(40%, 100%);
+      background-color: $col-4;
+      color: $col-3;
+      text-align: center;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 80px;
+      border-radius: 5px 0px 0px 0px;
+
+    }
+    & > main > section > div >div:nth-child(1) > div:nth-child(2){
+      @include width-height(40%, 100%);
+      background-color: $col-5;
+      color: $col-1;
+      text-align: center;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 80px;
+      border-radius: 0px 5px 0px 0px;
+
+    }
+    & > main > section > div >div:nth-child(2){
+      @include width-height(80vw, 55%);
+      @include flex-set(column, flex-start, center);
+    }
+    & > main > section > div >div:nth-child(2) > ul{
+      @include width-height(80%, 100%);
+      @include flex-set(column, space-around, center);
+      background-color: $col-3;
+      list-style: none;
+
+    }
+    & > main > section > div >div:nth-child(2) > ul > li:nth-child(1){
+      @include width-height(80%, 20%);
+      background-color: $col-5;
+      color: $col-3;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      border-radius: 5px;
+
+    }
+    & > main > section > div >div:nth-child(2) > ul > li:nth-child(2){
+      @include width-height(80%, 20%);
+      background-color: $col-5;
+      color: $col-3;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      border-radius: 5px;
+
+    }
+    & > main > section > div >div:nth-child(2) > ul > li:nth-child(3){
+      @include width-height(35%, 5%);
+      background-color: $col-3;
+      color: $col-4;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 10px;
+    }
+    & > main > section > div >div:nth-child(3){
+      @include width-height(80%, 20%);
+      @include flex-set(row, space-around, flex-start);
+      background-color: $col-3;
+
+    }
+    & > main > section > div >div:nth-child(3) > div:nth-child(1){
+      @include width-height(50%, 80%);
+      background-color: $col-4;
+      color: $col-3;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 5px;
+
+    }
+    & > main > section > div >div:nth-child(3) > div:nth-child(2){
+      @include width-height(40%, 80%);
+      @include flex-set(row, space-around, center);
+
+      background-color: $col-3;
+      }
+      & > main > section > div >div:nth-child(3) > div:nth-child(2) > div:nth-child(1){
+      @include width-height(50%, 60%);
+      background-color: $col-3;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 10px;
+      }
+      & > main > section > div >div:nth-child(3) > div:nth-child(2) > div:nth-child(2){
+      @include width-height(50%, 60%);
+      @include flex-set(row, flex-end, center);
+      border-radius: 5px;
+
+
+        background-color: $col-4;
+      
+      }
+      & > main > section > div >div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div{
+        @include width-height(25%, 80%);
+        background-color: $col-3;
+        margin-right: 1vw;
+      border-radius: 50%;
+
+        }
+        & > main > section > aside{
+        @include width-height(80vw, 30%);
+        @include flex-set(column, center, center);
+        background-color: #F7F9FA;
+        }
+        & > main > section > aside > ul{
+          @include width-height(80%, 80%);
+          @include flex-set(column, space-around, center);
+          background-color: $col-3;
+          list-style: none;
+          }
+          
+          & > main > section > aside > ul > li:nth-child(1){
+            @include width-height(100%, 40%);
+            @include flex-set(row, space-around, center);
+            background-color: $col-5;
+            border-radius: 5px;
+            position: relative;
+            bottom: -25px;
+            right: 10px;
+            z-index: 2;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            
+
+            }
+            // 증시
+            & > main > section > aside > ul > li:nth-child(1) > div:nth-child(1){
+              @include width-height(26%, 30%);
+              @include flex-set(row, space-around, center);
+              color: $col-1;
+              background-color: $col-5;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 15px;
+              }
+            // 코스닥, 네모 작게, 203332.124
+            & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2){
+              @include width-height(80%, 40%);
+              @include flex-set(row, space-around, center);
+              background-color: $col-5;
+              }
+            // 코스닥
+            & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2) > :nth-child(1){
+              @include width-height(80%, 80%);
+              @include flex-set(row, space-around, center);
+              color: $col-1;
+              background-color: $col-5;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 10px;
+              line-height: 12px;
+              }
+              // 네모 작게
+            & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2) > :nth-child(2){
+              @include width-height(13%, 78%);
+              @include flex-set(row, space-around, center);
+              background-color: $col-4;
+              }
+            // 203332.124
+            & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2) > :nth-child(3){
+              @include width-height(80%, 80%);
+              @include flex-set(column, space-around, center);
+              color: $col-1;
+              background-color: $col-5;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 10px;
+              line-height: 12px;
+              }
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3){
+                @include width-height(30%, 80%);
+                @include flex-set(column, space-around, flex-start);
+                background-color: $col-5;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                }
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3) > :nth-child(1){
+                @include width-height(50%, 6%);
+                background-color: $col-4;
+                }
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3) > :nth-child(2){
+                @include width-height(70%, 6%);
+                background-color: $col-4;
+                }
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3) > :nth-child(3){
+                @include width-height(60%, 6%);
+                background-color: $col-4;
+                }
+          & > main > section > aside > ul > li:nth-child(2){
+            @include width-height(100%, 40%);
+            @include flex-set(row, space-around, center);
+            background-color: $col-5;
+            border-radius: 5px;
+            z-index: 1;
+            position: relative;
+            top: 7px;
+            left: 20px;
+
+            }
+            & > main > section > aside > ul > li:nth-child(2) > div:nth-child(1){
+              @include width-height(26%, 30%);
+              @include flex-set(row, space-around, center);
+              color: $col-1;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 15px;
+              background-color: $col-5;
+              }
+              & > main > section > aside > ul > li:nth-child(2) > div:nth-child(2){
+                @include width-height(100%, 40%);
+                @include flex-set(row, space-around, center);
+                color: $col-1;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                background-color: $col-5;
+                }
+              & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3){
+                @include width-height(30%, 80%);
+                @include flex-set(column, space-around, flex-start);
+                background-color: $col-5;
+                }
+                & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3) >div:nth-child(1){
+                  @include width-height(70%, 6%);
+                  background-color: $col-4;
+                  }
+                & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3) >div:nth-child(2){
+                  @include width-height(40%, 6%);
+                  background-color: $col-4;
+                  }
+                & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3) >div:nth-child(3){
+                  @include width-height(70%, 6%);
+                  background-color: $col-4;
+                  }
+        & > main > section{
+          @include width-height(80vw, 60%);
+          @include flex-set(column, space-around, center);
+          background-color: $col-3;
+          }
+          & > main > section > article{
+            @include width-height(80vw, 60%);
+            @include flex-set(column, space-around, center);
+            background-color: $col-3;
+            }
+            & > main > section > article > div:nth-child(1){
+              @include width-height(100%, 100%);
+              @include flex-set(column, space-around, center);
+              background-color: $col-3;
+              }
+            & > main > section > article > div:nth-child(1) > h1{
+              @include width-height(80vw, 60%);
+              @include flex-set(column, space-around, flex-start);
+              color: $col-1;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 15px;
+              background-color: $col-3;
+              }
+            & > main > section > article > div:nth-child(1) > div:nth-child(1){
+              @include width-height(80%, 40%);
+              background-color: $col-4;
+              color: $col-3;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 48px;
+              line-height: 58px;
+              }
+            & > main > section > article > div:nth-child(1) > div:nth-child(2){
+              @include width-height(30%, 5%);
+              @include flex-set(row, space-around, center);
+              background-color: $col-4;
+              color: $col-3;
+              }
+              & > main > section > article > div:nth-child(1) > div:nth-child(2) > div{
+                @include width-height(30%, 80%);
+                background-color: $col-4;
+                }
+            & > main > section > article > div:nth-child(1) > div:nth-child(3){
+              @include width-height(80%, 40%);
+              @include flex-set(row, space-around, center);
+              background-color: $col-3;
+              }
+              
+              & > main > section > article > div:nth-child(1) > div:nth-child(3) > div:nth-child(1){
+                @include width-height(80%, 40%);
+                @include flex-set(row, space-around, center);
+              background-color: $col-4;
+              }
+              & > main > section > article > div:nth-child(1) > div:nth-child(3) > div:nth-child(2){
+                @include width-height(80%, 40%);
+                @include flex-set(row, space-around, center);
+              background-color: $col-3;
+              }
+              & > main > section > article > div:nth-child(1) > div:nth-child(3) > div:nth-child(3){
+                @include width-height(80%, 40%);
+                @include flex-set(row, space-around, center);
+                background-color: $col-3;
+                }
+            & > main > section > article > div:nth-child(1) > div:nth-child(4){
+              @include width-height(80%, 40%);
+              @include flex-set(column, space-around, center);
+              background-color: $col-3;
+              }
+              & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2{
+                @include width-height(80%, 40%);
+                @include flex-set(row, space-around, center);
+                background-color: $col-3;
+                }
+                & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2 > div:nth-child(1){
+                  @include width-height(80%, 40%);
+                  @include flex-set(row, space-around, center);
+                  background-color: $col-3;
+                  color: $col-1;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 19px;
+                }
+                & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2 > div:nth-child(2){
+                  @include width-height(80%, 40%);
+                  background-color: $col-3;
+                  color: #37A0F4;
+                }
+                & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2 > div:nth-child(3){
+                  @include width-height(80%, 40%);
+                  background-color: $col-3;
+                  color: $col-1;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 12px;
+                  line-height: 15px;
+                }
+              & > main > section > article > div:nth-child(1) > div:nth-child(4) > p{
+                  @include width-height(80%, 40%);
+                  background-color: $col-3;
+                  color: $col-1;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 10px;
+                  line-height: 12px;
+                  text-align: justify;
+                }
+            & > main > section > article > ul{
+              @include width-height(80%, 100%);
+              @include flex-set(column, flex-end, flex-start);
+              background-color: $col-3;
+              list-style: none;
+            }
+              & > main > section > article > ul > li{
+                @include width-height(100%, 25%);
+                @include flex-set(row, flex-start, center);
+                background-color: $col-3;
+                list-style: none;
+              }
+                & > main > section > article > ul > li:nth-child(1) > div:nth-child(1){
+                  @include width-height(80%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  color: $col-1;
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: 12px;
+                  line-height: 15px;
+                }
+                & > main > section > article > ul > li:nth-child(1) > div:nth-child(2){
+                  @include width-height(3%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-4;
+                }
+                & > main > section > article > ul > li:nth-child(1) > div:nth-child(3){
+                  @include width-height(80%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 8px;
+                  line-height: 10px;
+                  color: $col-1;
+                }
+                & > main > section > article > ul > li:nth-child(1) > div:nth-child(4){
+                  @include width-height(80%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  color: $col-1;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 8px;
+                  line-height: 10px;
+                }
+                & > main > section > article > ul > li:nth-child(2) > div:nth-child(1){
+                  @include width-height(80%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  color: $col-1;
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: 12px;
+                  line-height: 15px;
+                }
+                & > main > section > article > ul > li:nth-child(2) > div:nth-child(2){
+                  @include width-height(4%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-4;
+                }
+                & > main > section > article > ul > li:nth-child(2) > div:nth-child(3){
+                  @include width-height(80%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 8px;
+                  line-height: 10px;
+                  color: $col-1;
+                }
+                & > main > section > article > ul > li:nth-child(2) > div:nth-child(4){
+                  @include width-height(80%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  color: $col-1;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 8px;
+                  line-height: 10px;
+                }
+                & > main > section > article > ul > li:nth-child(2) > div:nth-child(5){
+                  @include width-height(80%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  color: $col-1;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 8px;
+                  line-height: 10px;
+                }
+                & > main > section > article > ul > li:nth-child(3) > div:nth-child(1){
+                  @include width-height(80%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  color: $col-1;
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: 12px;
+                  line-height: 15px;
+                }
+                & > main > section > article > ul > li:nth-child(3) > div:nth-child(2){
+                  @include width-height(3%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-4;
+                }
+                & > main > section > article > ul > li:nth-child(3) > div:nth-child(3){
+                  @include width-height(80%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 8px;
+                  line-height: 10px;
+                  color: $col-1;
+                }
+                & > main > section > article > ul > li:nth-child(3) > div:nth-child(4){
+                  @include width-height(80%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-4;
+                  color: $col-3;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 8px;
+                  line-height: 10px;
+                }
+
+  }
+// 태블릿 시작
+  @media(min-width: 429px) and (max-width: 1024px){
+    &{
+      @include flex-set(row, flex-start, center)
+    }
+    & > nav{@include flex-set(column,space-around,center);
+    @include width-height(100px, 100vh);
+    background-color: $col-4;
+    }
+    & > nav > div{
+      @include width-height(20%, 2%);
+      background-color: $col-3;
+      border-radius: 50%;
+    }
+  // main 시작
+    & > main{
+      @include flex-set(column, flex-start, center);
+      width: calc(100% - 100px);
+      height: 100vh;
+      background-color: $col-3;
+      color: $col-4;
+    }
+    & > main > header{
+      @include width-height(80%,30%);
+      
+    }
+    & > main > header > div:nth-child(1){
+      @include width-height(25%,20%);
+    }
+    & > main > header > div:nth-child(2){
+      @include width-height(90%,50%);
+      @include flex-set(row,flex-end,flex-end);
+    }
+    & > main > header > div:nth-child(2) div:nth-child(1){
+      @include width-height(40%,20%);
+      
+    }
+    & > main > header > div:nth-child(2) div:nth-child(2){
+      @include width-height(10%,20%);
+      background-color: $col-4;
+      color: $col-3;
+      text-align: center;
+      border-radius: 5px;
+      
+    }
+    & > main > section{
+      @include flex-set(column, flex-start, center);
+      @include width-height(100%, 80%);
+    }
+    & > main > section > div{
+      @include flex-set(column, flex-start, center);
+      @include width-height(100%, 50%);
+    }
+    & > main > section > div >div:nth-child(1){
+      @include width-height(80vw, 20%);
+      @include flex-set(row, center, center);
+    }
+    & > main > section > div >div:nth-child(1) > div:nth-child(1){
+      @include width-height(40%, 100%);
+      background-color: $col-4;
+      color: $col-3;
+      text-align: center;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 80px;
+      border-radius: 5px 0px 0px 0px;
+
+    }
+    & > main > section > div >div:nth-child(1) > div:nth-child(2){
+      @include width-height(40%, 100%);
+      background-color: $col-5;
+      color: $col-1;
+      text-align: center;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 80px;
+      border-radius: 0px 5px 0px 0px;
+
+    }
+    
+    & > main > section > div >div:nth-child(2){
+      @include width-height(80vw, 30%);
+      @include flex-set(column, flex-start, center);
+    }
+    & > main > section > div >div:nth-child(2) > ul{
+      @include width-height(80%, 100%);
+      @include flex-set(column, space-around, center);
+      background-color: $col-3;
+      list-style: none;
+
+    }
+    & > main > section > div >div:nth-child(2) > ul > li:nth-child(1){
+      @include width-height(80%, 20%);
+      background-color: $col-5;
+      color: $col-3;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      border-radius: 5px;
+
+    }
+    & > main > section > div >div:nth-child(2) > ul > li:nth-child(2){
+      @include width-height(80%, 20%);
+      background-color: $col-5;
+      color: $col-3;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      border-radius: 5px;
+
+    }
+    & > main > section > div >div:nth-child(2) > ul > li:nth-child(3){
+      @include width-height(35%, 5%);
+      background-color: $col-3;
+      color: $col-4;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 10px;
+    }
+    & > main > section > div >div:nth-child(3){
+      @include width-height(80%, 10%);
+      @include flex-set(row, space-around, flex-start);
+      background-color: $col-3;
+
+    }
+    & > main > section > div >div:nth-child(3) > div:nth-child(1){
+      @include width-height(50%, 80%);
+      background-color: $col-4;
+      color: $col-3;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 5px;
+
+    }
+    & > main > section > div >div:nth-child(3) > div:nth-child(2){
+      @include width-height(40%, 80%);
+      @include flex-set(row, space-around, center);
+
+      background-color: $col-3;
+      }
+      & > main > section > div >div:nth-child(3) > div:nth-child(2) > div:nth-child(1){
+      @include width-height(50%, 60%);
+      background-color: $col-3;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 10px;
+      }
+      & > main > section > div >div:nth-child(3) > div:nth-child(2) > div:nth-child(2){
+      @include width-height(50%, 60%);
+      @include flex-set(row, flex-end, center);
+      border-radius: 5px;
+
+        background-color: $col-4;
+      
+      }
+      & > main > section > div >div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div{
+        @include width-height(25%, 80%);
+        background-color: $col-3;
+        margin-right: 1vw;
+        border-radius: 50%;
+
+        }
+        & > main > section > aside{
+          @include width-height(100%, 30%);
+          @include flex-set(column, center, center);
+          background-color: #F7F9FA;
+          }
+          & > main > section > aside > ul{
+            @include width-height(80%, 80%);
+            @include flex-set(column, space-around, center);
+            background-color: $col-3;
+            list-style: none;
+            }
+            
+            & > main > section > aside > ul > li:nth-child(1){
+              @include width-height(100%, 40%);
+              @include flex-set(row, space-around, center);
+              background-color: $col-5;
+              border-radius: 5px;
+              
+              }
+              // 증시
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(1){
+                @include width-height(80%, 30%);
+                @include flex-set(row, space-around, center);
+                color: $col-1;
+                background-color: $col-5;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                }
+              // 코스닥, 네모 작게, 203332.124
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2){
+                @include width-height(80%, 40%);
+                @include flex-set(row, space-around, center);
+                background-color: $col-5;
+                }
+              // 코스닥
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2) > :nth-child(1){
+                @include width-height(80%, 80%);
+                @include flex-set(row, space-around, center);
+                color: $col-1;
+                background-color: $col-5;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                }
+                // 네모 작게
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2) > :nth-child(2){
+                @include width-height(80%, 80%);
+                @include flex-set(row, space-around, center);
+                background-color: $col-4;
+                }
+              // 203332.124
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2) > :nth-child(3){
+                @include width-height(80%, 80%);
+                @include flex-set(column, space-around, center);
+                color: $col-1;
+                background-color: $col-5;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                }
+                & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3){
+                  @include width-height(30%, 80%);
+                  @include flex-set(column, space-around, center);
+                  background-color: $col-5;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 10px;
+                  line-height: 12px;
+                  }
+                & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3) > :nth-child(1){
+                  @include width-height(80%, 3%);
+                  background-color: $col-4;
+                  }
+                & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3) > :nth-child(2){
+                  @include width-height(80%, 3%);
+                  background-color: $col-4;
+                  }
+                & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3) > :nth-child(3){
+                  @include width-height(80%, 3%);
+                  background-color: $col-4;
+                  }
+            & > main > section > aside > ul > li:nth-child(2){
+              @include width-height(100%, 40%);
+              @include flex-set(row, space-around, center);
+              background-color: $col-5;
+              border-radius: 5px;
+
+              }
+              & > main > section > aside > ul > li:nth-child(2) > div:nth-child(1){
+                @include width-height(100%, 40%);
+                @include flex-set(row, space-around, center);
+                color: $col-1;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                background-color: $col-5;
+                }
+                & > main > section > aside > ul > li:nth-child(2) > div:nth-child(2){
+                  @include width-height(100%, 40%);
+                  @include flex-set(row, space-around, center);
+                  color: $col-1;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 10px;
+                  line-height: 12px;
+                  background-color: $col-5;
+                  }
+                & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3){
+                  @include width-height(80%, 40%);
+                  @include flex-set(column, space-around, center);
+                  background-color: $col-5;
+                  }
+                  & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3) >div:nth-child(1){
+                    @include width-height(80%, 3%);
+                    background-color: $col-4;
+                    }
+                  & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3) >div:nth-child(2){
+                    @include width-height(80%, 3%);
+                    background-color: $col-4;
+                    }
+                  & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3) >div:nth-child(3){
+                    @include width-height(80%, 3%);
+                    background-color: $col-4;
+                    }
+          
+            & > main > section > article{
+              @include width-height(100%, 60%);
+              @include flex-set(column, space-around, center);
+              background-color: $col-3;
+              }
+              & > main > section > article > div:nth-child(1){
+                @include width-height(100%, 100%);
+                @include flex-set(column, space-around, center);
+                background-color: $col-3;
+                }
+              & > main > section > article > div:nth-child(1) > h1{
+                @include width-height(100%, 60%);
+                @include flex-set(column, space-around, flex-start);
+                color: $col-1;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                background-color: $col-3;
+                }
+              & > main > section > article > div:nth-child(1) > div:nth-child(1){
+                @include width-height(80%, 40%);
+                background-color: $col-4;
+                color: $col-3;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 48px;
+                line-height: 58px;
+                }
+              & > main > section > article > div:nth-child(1) > div:nth-child(2){
+                @include width-height(30%, 5%);
+                @include flex-set(row, space-around, center);
+                background-color: $col-4;
+                color: $col-3;
+                }
+                & > main > section > article > div:nth-child(1) > div:nth-child(2) > div{
+                  @include width-height(30%, 80%);
+                  background-color: $col-4;
+                  }
+              & > main > section > article > div:nth-child(1) > div:nth-child(3){
+                @include width-height(80%, 40%);
+                @include flex-set(row, space-around, center);
+                background-color: $col-3;
+                }
+                
+                & > main > section > article > div:nth-child(1) > div:nth-child(3) > div:nth-child(1){
+                  @include width-height(80%, 40%);
+                  @include flex-set(row, space-around, center);
+                background-color: $col-4;
+                }
+                & > main > section > article > div:nth-child(1) > div:nth-child(3) > div:nth-child(2){
+                  @include width-height(80%, 40%);
+                  @include flex-set(row, space-around, center);
+                background-color: $col-3;
+                }
+                & > main > section > article > div:nth-child(1) > div:nth-child(3) > div:nth-child(3){
+                  @include width-height(80%, 40%);
+                  @include flex-set(row, space-around, center);
+                  background-color: $col-3;
+                  }
+              & > main > section > article > div:nth-child(1) > div:nth-child(4){
+                @include width-height(80%, 40%);
+                @include flex-set(column, space-around, center);
+                background-color: $col-3;
+                }
+                & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2{
+                  @include width-height(80%, 40%);
+                  @include flex-set(row, space-around, center);
+                  background-color: $col-3;
+                  }
+                  & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2 > div:nth-child(1){
+                    @include width-height(80%, 40%);
+                    @include flex-set(row, space-around, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                  }
+                  & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2 > div:nth-child(2){
+                    @include width-height(80%, 40%);
+                    background-color: $col-3;
+                    color: #37A0F4;
+                  }
+                  & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2 > div:nth-child(3){
+                    @include width-height(80%, 40%);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 15px;
+                  }
+                & > main > section > article > div:nth-child(1) > div:nth-child(4) > p{
+                    @include width-height(80%, 40%);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 10px;
+                    line-height: 12px;
+                    text-align: justify;
+                  }
+              & > main > section > article > ul{
+                @include width-height(80%, 60%);
+                @include flex-set(column, center, flex-end);
+                background-color: $col-3;
+                list-style: none;
+              }
+                & > main > section > article > ul > li{
+                  @include width-height(80%, 60%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  list-style: none;
+                }
+                  & > main > section > article > ul > li:nth-child(1) > div:nth-child(1){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 15px;
+                  }
+                  & > main > section > article > ul > li:nth-child(1) > div:nth-child(2){
+                    @include width-height(3%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-4;
+                  }
+                  & > main > section > article > ul > li:nth-child(1) > div:nth-child(3){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                    color: $col-1;
+                  }
+                  & > main > section > article > ul > li:nth-child(1) > div:nth-child(4){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                  }
+                  & > main > section > article > ul > li:nth-child(2) > div:nth-child(1){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 15px;
+                  }
+                  & > main > section > article > ul > li:nth-child(2) > div:nth-child(2){
+                    @include width-height(4%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-4;
+                  }
+                  & > main > section > article > ul > li:nth-child(2) > div:nth-child(3){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                    color: $col-1;
+                  }
+                  & > main > section > article > ul > li:nth-child(2) > div:nth-child(4){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                  }
+                  & > main > section > article > ul > li:nth-child(2) > div:nth-child(5){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                  }
+                  & > main > section > article > ul > li:nth-child(3) > div:nth-child(1){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 15px;
+                  }
+                  & > main > section > article > ul > li:nth-child(3) > div:nth-child(2){
+                    @include width-height(3%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-4;
+                  }
+                  & > main > section > article > ul > li:nth-child(3) > div:nth-child(3){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                    color: $col-1;
+                  }
+                  & > main > section > article > ul > li:nth-child(3) > div:nth-child(4){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-4;
+                    color: $col-3;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                  }
+  
+  }
+// 웹 시작
+  @media(min-width: 1024px){
+    &{
+      @include flex-set(row, flex-start, center)
+      
+    }
+    & > nav{@include flex-set(column,flex-end,center);
+    @include width-height(100px, 100vh);
+    background-color: $col-4;
+    }
+    & > nav > div{
+      @include width-height(20%, 2%);
+      background-color: $col-3;
+      position: relative;
+      margin: 4px;
+      bottom: 200px
+
+    }
+  // main 시작
+    & > main{
+      @include flex-set(column, flex-start, center);
+      width: calc(100% - 100px);
+      height: 100vh;
+      background-color: $col-4;
+      background-color: rgba($color: $col-4, $alpha: 0.2);
+    }
+    & > main > header{
+      @include width-height(40%,20%);
+      @include flex-set(column, flex-start, center);
+      background-color: $col-4;
+      background-color: rgba($color: $col-4, $alpha: 0);
+      
+    }
+    & > main > header > div:nth-child(1){
+      @include width-height(25%,40%);
+    }
+    & > main > header > div:nth-child(2){
+      @include width-height(25%,13%);
+      @include flex-set(row,center,center);
+      position: absolute;
+      top: 120px;
+      left: 362px;
+    }
+    & > main > header > div:nth-child(2) div:nth-child(1){
+      @include width-height(70%,50%);
+      color: $col-4;
+      text-align: center;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 38px;
+      line-height: 39px;
+    }
+    & > main > header > div:nth-child(2) div:nth-child(2){
+      @include width-height(18%,15%);
+      background-color: $col-4;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 15px;
+      text-align: center;
+      color: $col-3;
+      
+    }
+    & > main > section{
+      @include flex-set(column, flex-start, center);
+      @include width-height(60vw, 90%);
+    }
+    & > main > section > div{
+      @include flex-set(column, flex-start, center);
+      @include width-height(25%, 25%);
+      position: absolute;
+          left: 345px;
+          top: 240px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
+    }
+    & > main > section > div >div:nth-child(1){
+      @include width-height(100%, 20%);
+      @include flex-set(row, center, center);
+    }
+    & > main > section > div >div:nth-child(1) > div:nth-child(1){
+      @include width-height(50%, 100%);
+      background-color: $col-4;
+      color: $col-3;
+      text-align: center;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 80px;
+      border-radius: 5px 0px 0px 0px;
+    }
+    & > main > section > div >div:nth-child(1) > div:nth-child(2){
+      @include width-height(50%, 100%);
+      background-color: $col-5;
+      color: $col-1;
+      text-align: center;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 80px;
+      border-radius: 0px 5px 0px 0px;
+
+    }
+    
+    & > main > section > div >div:nth-child(2){
+      @include width-height(100%, 64%);
+      @include flex-set(column, flex-start, center);
+    }
+    & > main > section > div >div:nth-child(2) > ul{
+      @include width-height(100%, 100%);
+      @include flex-set(column, space-around, center);
+      background-color: $col-3;
+      list-style: none;
+
+    }
+    & > main > section > div >div:nth-child(2) > ul > li:nth-child(1){
+      @include width-height(60%, 22%);
+      background-color: $col-5;
+      color: $col-3;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      border-radius: 5px;
+
+    }
+    & > main > section > div >div:nth-child(2) > ul > li:nth-child(2){
+      @include width-height(60%, 22%);
+      background-color: $col-5;
+      color: $col-3;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      border-radius: 5px;
+
+    }
+    & > main > section > div >div:nth-child(2) > ul > li:nth-child(3){
+      @include width-height(35%, 5%);
+      background-color: $col-3;
+      color: $col-4;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 10px;
+    }
+    & > main > section > div >div:nth-child(3){
+      @include width-height(100%, 20%);
+      @include flex-set(row, space-around, flex-start);
+      background-color: $col-3;
+    }
+    & > main > section > div >div:nth-child(3) > div:nth-child(1){
+      @include width-height(40%, 73%);
+      background-color: $col-4;
+      color: $col-3;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 5px;
+
+    }
+    & > main > section > div >div:nth-child(3) > div:nth-child(2){
+      @include width-height(30%, 75%);
+      @include flex-set(row, space-around, center);
+
+      background-color: $col-3;
+      }
+      & > main > section > div >div:nth-child(3) > div:nth-child(2) > div:nth-child(1){
+      @include width-height(50%, 60%);
+      background-color: $col-3;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 10px;
+      }
+      & > main > section > div >div:nth-child(3) > div:nth-child(2) > div:nth-child(2){
+      @include width-height(40%, 33%);
+      @include flex-set(row, flex-end, center);
+      border-radius: 8px;
+
+        background-color: $col-4;
+      
+      }
+      & > main > section > div >div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div{
+        @include width-height(17%, 70%);
+        background-color: $col-3;
+        margin-right: 1vw;
+        border-radius: 50%;
+
+        }
+        & > main > section > aside{
+          @include width-height(31vw, 30%);
+          @include flex-set(column, center, center);
+          position: absolute;
+          left: 300px;
+          top: 470px;
+          }
+          & > main > section > aside > ul{
+            @include width-height(80%, 80%);
+            @include flex-set(column, space-around, center);
+            list-style: none;
+            }
+            
+            & > main > section > aside > ul > li:nth-child(1){
+              @include width-height(100%, 22%);
+              @include flex-set(row, space-around, center);
+              background-color: $col-4;
+              box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+              border-radius: 5px;
+
+
+  
+              }
+              // 증시
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(1){
+                @include width-height(20%, 30%);
+                @include flex-set(row, space-around, center);
+                color: $col-3;
+                background-color: $col-4;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                }
+              // 코스닥, 네모 작게, 203332.124
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2){
+                @include width-height(80%, 40%);
+                @include flex-set(row, space-around, center);
+                background-color: $col-4;
+                }
+              // 코스닥
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2) > :nth-child(1){
+                @include width-height(80%, 80%);
+                @include flex-set(row, space-around, center);
+                color: $col-3;
+                background-color: $col-4;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                }
+                // 네모 작게
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2) > :nth-child(2){
+                @include width-height(4%, 30%);
+                @include flex-set(row, space-around, center);
+                background-color: $col-3;
+                }
+              // 203332.124
+              & > main > section > aside > ul > li:nth-child(1) > div:nth-child(2) > :nth-child(3){
+                @include width-height(80%, 80%);
+                @include flex-set(column, space-around, center);
+                color: $col-3;
+                background-color: $col-4;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                }
+                & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3){
+                  @include width-height(17%, 44%);
+                  @include flex-set(column, space-around, flex-start);
+                  background-color: $col-4;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 10px;
+                  line-height: 12px;
+                  }
+                & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3) > :nth-child(1){
+                  @include width-height(50%, 7%);
+                  background-color: $col-3;
+                  }
+                & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3) > :nth-child(2){
+                  @include width-height(70%, 7%);
+                  background-color: $col-3;
+                  }
+                & > main > section > aside > ul > li:nth-child(1) > div:nth-child(3) > :nth-child(3){
+                  @include width-height(60%, 7%);
+                  background-color: $col-3;
+                  }
+            & > main > section > aside > ul > li:nth-child(2){
+              @include width-height(100%, 22%);
+              @include flex-set(row, space-around, center);
+              background-color: $col-3;
+              border-radius: 5px;
+
+              }
+              & > main > section > aside > ul > li:nth-child(2) > div:nth-child(1){
+                @include width-height(20%, 30%);
+                @include flex-set(row, space-around, center);
+                color: $col-1;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                background-color: $col-3;
+                }
+                & > main > section > aside > ul > li:nth-child(2) > div:nth-child(2){
+                  @include width-height(70%, 40%);
+                  @include flex-set(row, space-around, center);
+                  color: $col-1;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 10px;
+                  line-height: 12px;
+                  background-color: $col-3;
+                  }
+                & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3){
+                  @include width-height(17%, 44%);
+                  @include flex-set(column, space-around, flex-start);
+                  background-color: $col-3;
+                  }
+                  & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3) >div:nth-child(1){
+                    @include width-height(70%, 7%);
+                    background-color: $col-4;
+                    }
+                  & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3) >div:nth-child(2){
+                    @include width-height(40%, 7%);
+                    background-color: $col-4;
+                    }
+                  & > main > section > aside > ul > li:nth-child(2) > div:nth-child(3) >div:nth-child(3){
+                    @include width-height(70%, 7%);
+                    background-color: $col-4;
+                    }
+          
+            & > main > section > article{
+              @include width-height(26vw, 50%);
+              @include flex-set(column, space-around, center);
+              background-color: $col-3;
+              position: relative;
+              left: 265px;
+              top: 300px;
+              border-radius: 5px;
+
+              }
+              & > main > section > article > div:nth-child(1){
+                @include width-height(100%, 100%);
+                @include flex-set(column, space-around, center);
+                background-color: $col-3;
+                position: relative;
+                z-index: 2;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                
+                }
+              & > main > section > article > div:nth-child(1) > h1{
+                @include width-height(26vw, 14%);
+                @include flex-set(column, space-around, flex-start);
+                color: $col-1;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                background-color: $col-3;
+                border-radius: 5px;
+                }
+              & > main > section > article > div:nth-child(1) > div:nth-child(1){
+                @include width-height(87%, 40%);
+                background-color: $col-4;
+                color: $col-3;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 48px;
+                line-height: 58px;
+                }
+              & > main > section > article > div:nth-child(1) > div:nth-child(2){
+                @include width-height(87%, 40%);
+                @include flex-set(row, space-around, center);
+                background-color: $col-4;
+                color: $col-3;
+                }
+                & > main > section > article > div:nth-child(1) > div:nth-child(2) > div{
+                  @include width-height(30%, 80%);
+                  background-color: $col-4;
+                  }
+              & > main > section > article > div:nth-child(1) > div:nth-child(3){
+                @include width-height(10%, 6%);
+                @include flex-set(row, space-around, center);
+                background-color: $col-3;
+                }
+                
+                & > main > section > article > div:nth-child(1) > div:nth-child(3) > div:nth-child(1){
+                  @include width-height(20%, 40%);
+                  @include flex-set(row, space-around, center);
+                background-color: $col-4;
+                }
+                & > main > section > article > div:nth-child(1) > div:nth-child(3) > div:nth-child(2){
+                  @include width-height(20%, 40%);
+                  @include flex-set(row, space-around, center);
+                background-color: $col-5;
+                }
+                & > main > section > article > div:nth-child(1) > div:nth-child(3) > div:nth-child(3){
+                  @include width-height(20%, 40%);
+                  @include flex-set(row, space-around, center);
+                  background-color: $col-5;
+                  }
+              & > main > section > article > div:nth-child(1) > div:nth-child(4){
+                @include width-height(87%, 40%);
+                @include flex-set(column, space-around, center);
+                background-color: $col-3;
+                }
+                & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2{
+                  @include width-height(100%, 15%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  }
+                  & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2 > div:nth-child(1){
+                    @include width-height(28%, 40%);
+                    @include flex-set(row, space-around, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                  }
+                  & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2 > div:nth-child(2){
+                    @include width-height(12%, 40%);
+                    background-color: $col-3;
+                    color: #37A0F4;
+                  }
+                  & > main > section > article > div:nth-child(1) > div:nth-child(4) > h2 > div:nth-child(3){
+                    @include width-height(80%, 40%);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 15px;
+                  }
+                & > main > section > article > div:nth-child(1) > div:nth-child(4) > p{
+                    @include width-height(96%, 40%);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 10px;
+                    line-height: 12px;
+                    text-align: justify;
+                  }
+              & > main > section > article > ul{
+                @include width-height(80%, 30%);
+                @include flex-set(column, flex-end, flex-start);
+                background-color: $col-3;
+                list-style: none;
+                position: relative;
+                bottom: 13px;
+                z-index: 1;
+              }
+                & > main > section > article > ul > li{
+                  @include width-height(100%, 16%);
+                  @include flex-set(row, flex-start, center);
+                  background-color: $col-3;
+                  list-style: none;
+                }
+                  & > main > section > article > ul > li:nth-child(1) > div:nth-child(1){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 15px;
+                  }
+                  & > main > section > article > ul > li:nth-child(1) > div:nth-child(2){
+                    @include width-height(3%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-4;
+                  }
+                  & > main > section > article > ul > li:nth-child(1) > div:nth-child(3){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                    color: $col-1;
+                  }
+                  & > main > section > article > ul > li:nth-child(1) > div:nth-child(4){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                  }
+                  & > main > section > article > ul > li:nth-child(2) > div:nth-child(1){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 15px;
+                  }
+                  & > main > section > article > ul > li:nth-child(2) > div:nth-child(2){
+                    @include width-height(4%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-4;
+                  }
+                  & > main > section > article > ul > li:nth-child(2) > div:nth-child(3){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                    color: $col-1;
+                  }
+                  & > main > section > article > ul > li:nth-child(2) > div:nth-child(4){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                  }
+                  & > main > section > article > ul > li:nth-child(2) > div:nth-child(5){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                  }
+                  & > main > section > article > ul > li:nth-child(3) > div:nth-child(1){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    color: $col-1;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 15px;
+                  }
+                  & > main > section > article > ul > li:nth-child(3) > div:nth-child(2){
+                    @include width-height(3%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-4;
+                  }
+                  & > main > section > article > ul > li:nth-child(3) > div:nth-child(3){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-3;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                    color: $col-1;
+                  }
+                  & > main > section > article > ul > li:nth-child(3) > div:nth-child(4){
+                    @include width-height(80%, 60%);
+                    @include flex-set(row, flex-start, center);
+                    background-color: $col-4;
+                    color: $col-3;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 10px;
+                  }
+  
+  }
+}
